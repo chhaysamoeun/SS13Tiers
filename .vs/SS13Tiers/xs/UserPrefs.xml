@@ -1,0 +1,40 @@
+﻿<Properties StartupConfiguration="Multiple Projects">
+  <MonoDevelop.Ide.ItemProperties.SS13Tiers.Web PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.ItemProperties.SS13Tiers.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="Multiple Projects" Name="Multiple Projects">
+      <Items>
+        <StartupItem ItemId="{CBD88C88-FE37-4D4D-964E-EE247F69EB37}" ItemName="SS13Tiers.Api" ConfigurationId="https" />
+        <StartupItem ItemId="{B13D16BF-3D30-46F8-BF48-731DB0627055}" ItemName="SS13Tiers.Web" ConfigurationId="https" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SS13Tiers.Web/Views/Position/Index.cshtml">
+    <Files>
+      <File FileName="SS13Tiers.Web/Views/Position/Index.cshtml" Line="35" Column="12" />
+      <File FileName="SS13Tiers.Web/Views/Position/Create.cshtml" Line="38" Column="48" />
+      <File FileName="SS13Tiers.Api/Controllers/PositionController.cs" Line="102" Column="4" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SS13Tiers" expanded="True">
+            <Node name="SS13Tiers.Web" expanded="True">
+              <Node name="Views" expanded="True">
+                <Node name="Position" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
+                </Node>
+                <Node name="Shared" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>

@@ -1,0 +1,49 @@
+﻿@{
+}
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <label for="PositionName" class="form-label">Position Name</label>
+                <input class="form-control" name="PositionName" id="PositionName" />
+                <span class="text-danger" id="errorPositionName"></span>
+            </div>
+            <br/>
+            <button class="btn btn-primary" id="save">
+                <i class="fa-sharp fa-solid fa-floppy-disk"></i> Save
+            </button>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#save").click(function () {
+                var position = $("#PositionName").val();
+                if (position) {
+                    var Position = {
+                        "PositionName": position
+                    };
+                    $.ajax({
+                        method: "POST",
+                        url: "https://localhost:7138/api/Position",
+                        data: JSON.stringify(Position),
+                        contentType: "application/json",
+                        success: function (data, textStatus,http) {
+                           // alert("Data: " + data + "\nTextStatus: " + textStatus + "\nHttpStatus: " + http.status);
+                            if (http.status === 201) {
+                                window.location.href = "/Position/Index";
+                            }
+                        }, error: function (error) {
+                            console.log(error);
+                        }
+                    });
+                } else {
+                    $("#errorPositionName").text("Position name is required");
+                    return;
+                }
+            });
+        });
+    </script>
+}
+

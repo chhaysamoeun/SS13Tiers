@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/SS13Tiers.Api.props" />
+</Project>

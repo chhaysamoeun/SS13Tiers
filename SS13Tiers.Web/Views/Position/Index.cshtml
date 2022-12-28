@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Position Page";
+}
+
+<div class="container">
+  <a class="btn btn-primary" href="Position/Create"><i class="fa-sharp fa-solid fa-plus"></i> Create New</a>
+ <br/><br/>
+  <table class="table table-bordered" id="t1">
+      <thead>
+          <tr>
+              <th>Position Name</th>
+              <th>Action</th>
+          </tr>
+      </thead>
+      <tbody></tbody>
+  </table>
+</div>
+@section Scripts{
+    <script>
+        var baseUrl = "https://localhost:7138/api/";
+        $(document).ready(function () {
+            $.ajax({
+                url: baseUrl + "Position",
+                method: "GET",
+                contentType: "json/application",
+                success: function (data) {
+                    $.each(data, function (i, v) {
+                        var row = "<tr><td>" + v.positionName;
+                        row += "</td><td><a class='btn btn-primary' href='#'>Edit</a> ";
+                        row += '|<a class="btn btn-danger" href="#" onClick=Delete("'+ v.positionId +'")><i class="fa-sharp fa-solid fa-trash"></i></a></td></tr>';
+                        $("#t1").append(row);
+                    });
+                }
+            });
+        });
+        function Delete(id) {
+            var result = confirm("Do you want to delete record?");
+            if (result) {
+                $.ajax({
+                    method: "DELETE",
+                    url: baseUrl + "Position/" + id,
+                    success: function (response) {
+                        window.location.reload();
+                    }, error: function (error) {
+                        console.log(error);
+                    }
+                });
+            }
+        }
+    </script>
+}
+
